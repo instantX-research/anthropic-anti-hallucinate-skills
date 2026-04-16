@@ -59,7 +59,12 @@ From within Claude Code, first add the marketplace:
 
 Then install the plugin:
 ```
-/plugin install anthropic-anti-hallucinate-skills@anti-hallucinate
+/plugin install anti-hallucinate@anthropic-anti-hallucinate-skills
+```
+
+And reload plugins to apply:
+```
+/reload-plugins
 ```
 
 This installs the guidelines as a Claude Code plugin, making the skill available across all your projects.
