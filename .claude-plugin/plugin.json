@@ -1,0 +1,11 @@
+{
+  "name": "anti-hallucinate",
+  "description": "Behavioral guidelines to reduce AI hallucinations, based on Anthropic's research on why models fabricate information and practical tactics to catch and prevent it.",
+  "version": "1.0.0",
+  "author": {
+    "name": "instantX-research"
+  },
+  "license": "MIT",
+  "keywords": ["hallucination", "accuracy", "honesty", "guidelines", "anti-hallucinate"],
+  "skills": ["./skills/anti-hallucinate"]
+}

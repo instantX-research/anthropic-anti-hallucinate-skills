@@ -1,0 +1,24 @@
+{
+  "name": "anthropic-anti-hallucinate-skills",
+  "id": "anthropic-anti-hallucinate-skills",
+  "owner": {
+    "name": "instantX-research"
+  },
+  "metadata": {
+    "description": "Behavioral guidelines to reduce AI hallucinations, derived from Anthropic's official research on why AI models hallucinate.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "anti-hallucinate",
+      "source": "./",
+      "description": "Anti-hallucination guidelines for Claude Code based on Anthropic's research.",
+      "version": "1.0.0",
+      "author": {
+        "name": "instantX-research"
+      },
+      "keywords": ["hallucination", "accuracy", "honesty", "guidelines", "anti-hallucinate"],
+      "category": "workflow"
+    }
+  ]
+}
