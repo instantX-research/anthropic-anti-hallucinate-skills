@@ -50,7 +50,36 @@ If something in the AI's response **sounds off or feels too convenient**, don't 
 
 ## Install
 
-**Option A: Claude Code Plugin (Recommended)**
+**Option A: CLAUDE.md (Recommended)**
+
+Because anti-hallucination is a guardrail that should apply to every factual claim, `CLAUDE.md` is preferred — it's always loaded into context, so there's no risk of the skill failing to trigger at the moment you need it most.
+
+**A1: Global — one install, all projects (Recommended)**
+
+Append to your user-level `~/.claude/CLAUDE.md`, which Claude Code loads for every project automatically:
+
+```bash
+mkdir -p ~/.claude
+echo "" >> ~/.claude/CLAUDE.md
+curl https://raw.githubusercontent.com/instantX-research/anthropic-anti-hallucinate-skills/main/CLAUDE.md >> ~/.claude/CLAUDE.md
+```
+
+**A2: Per-project — share with your team via git**
+
+Install into the project root so teammates pulling the repo pick up the same guardrails automatically.
+
+New project:
+```bash
+curl -o CLAUDE.md https://raw.githubusercontent.com/instantX-research/anthropic-anti-hallucinate-skills/main/CLAUDE.md
+```
+
+Existing project (append):
+```bash
+echo "" >> CLAUDE.md
+curl https://raw.githubusercontent.com/instantX-research/anthropic-anti-hallucinate-skills/main/CLAUDE.md >> CLAUDE.md
+```
+
+**Option B: Claude Code Plugin**
 
 From within Claude Code, first add the marketplace:
 ```
@@ -67,20 +96,7 @@ And reload plugins to apply:
 /reload-plugins
 ```
 
-This installs the guidelines as a Claude Code plugin, making the skill available across all your projects.
-
-**Option B: CLAUDE.md (per-project)**
-
-New project:
-```bash
-curl -o CLAUDE.md https://raw.githubusercontent.com/instantX-research/anthropic-anti-hallucinate-skills/main/CLAUDE.md
-```
-
-Existing project (append):
-```bash
-echo "" >> CLAUDE.md
-curl https://raw.githubusercontent.com/instantX-research/anthropic-anti-hallucinate-skills/main/CLAUDE.md >> CLAUDE.md
-```
+This installs the guidelines as a Claude Code plugin, making the skill available across all your projects. Note that skills are loaded on-demand based on the skill's description — which means there's a chance Claude won't recognize the current context as high-risk and skip loading it.
 
 ## File Structure
 
